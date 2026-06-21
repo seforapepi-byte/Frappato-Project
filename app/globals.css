@@ -292,7 +292,6 @@ section[id] {
   background: var(--ink);
 }
 
-.audio-toggle,
 .video-status {
   position: absolute;
   top: 94px;
@@ -309,7 +308,7 @@ section[id] {
   font-size: 10px;
   font-weight: 900;
   text-transform: uppercase;
-  cursor: pointer;
+  cursor: default;
   backdrop-filter: blur(12px);
 }
 
@@ -318,10 +317,6 @@ section[id] {
   border-color: var(--pink);
   color: var(--white);
   cursor: default;
-}
-
-.audio-toggle svg {
-  width: 16px;
 }
 
 .hero__metrics {
@@ -2210,7 +2205,6 @@ section[id] {
     font-size: 19px;
   }
 
-  .audio-toggle,
   .video-status {
     top: 78px;
     right: 14px;

@@ -36,7 +36,7 @@ public/images/Gravel.png
 public/images/Vittoria.png
 public/images/WIne.png
 public/images/Worker.png
-public/video/frappato-trail-hero-optimized.m4v
+public/video/frappato-trail.mp4
 tailwind.config.js
 tsconfig.json
 ```

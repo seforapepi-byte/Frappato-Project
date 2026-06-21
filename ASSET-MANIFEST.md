@@ -28,8 +28,8 @@ Cartella: `public/images/`
 
 Cartella: `public/video/`
 
-- `frappato-trail-hero-optimized.m4v`
-- Formato: H.264/M4V compatibile con `<video type="video/mp4">`
+- `frappato-trail.mp4`
+- Formato: H.264/MP4
 - Risoluzione: 960×540
 - Peso: 23.747.569 byte, circa 22,65 MiB
 

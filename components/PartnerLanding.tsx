@@ -18,8 +18,6 @@ import {
   ShoppingBag,
   UsersRound,
   Utensils,
-  Volume2,
-  VolumeX,
   Wine
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -496,8 +494,6 @@ function InteractiveTrailMap() {
 }
 
 export function PartnerLanding() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [muted, setMuted] = useState(true);
   const [videoFailed, setVideoFailed] = useState(false);
 
   useEffect(() => {
@@ -535,22 +531,6 @@ export function PartnerLanding() {
     };
   }, []);
 
-  const toggleAudio = async () => {
-    const video = videoRef.current;
-    if (!video) return;
-    const nextMuted = !video.muted;
-    video.muted = nextMuted;
-    setMuted(nextMuted);
-    if (!nextMuted) {
-      try {
-        await video.play();
-      } catch {
-        video.muted = true;
-        setMuted(true);
-      }
-    }
-  };
-
   return (
     <>
       <header className="site-header">
@@ -574,33 +554,20 @@ export function PartnerLanding() {
       <main>
         <section className="hero" id="top">
           <video
-            ref={videoRef}
             className="hero__video"
             autoPlay
+            muted
             loop
             playsInline
-            muted={muted}
             preload="metadata"
             poster="/images/1.png"
             aria-label="Ciclisti attraversano il territorio del Frappato Trail"
             onError={() => setVideoFailed(true)}
           >
-            <source src="/video/frappato-trail-hero-optimized.m4v" type="video/mp4" />
+            <source src="/video/frappato-trail.mp4" type="video/mp4" />
           </video>
           <div className="hero__overlay" aria-hidden="true" />
-          {videoFailed ? (
-            <p className="video-status" role="status">Cover hero attiva</p>
-          ) : (
-            <button
-              className="audio-toggle"
-              type="button"
-              onClick={toggleAudio}
-              aria-label={muted ? "Attiva l’audio del video" : "Disattiva l’audio del video"}
-            >
-              {muted ? <VolumeX aria-hidden="true" /> : <Volume2 aria-hidden="true" />}
-              {muted ? "Audio off" : "Audio on"}
-            </button>
-          )}
+          {videoFailed ? <p className="video-status" role="status">Cover hero attiva</p> : null}
           <div className="hero__content">
             <Kicker>MOVE. THIS IS SICILY.</Kicker>
             <h1>FRAPPATO<br />TRAIL</h1>
